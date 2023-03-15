@@ -38,7 +38,6 @@ public class Boj_11004_K째 {
     }
 
     //분할
-
     public int partition(int[] arr, int left, int right) {
         int lo = left;
         int hi = right;
