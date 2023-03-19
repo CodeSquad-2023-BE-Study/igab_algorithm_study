@@ -14,6 +14,7 @@ public class Boj_1427 {
         String[] split = line.split("");
         Arrays.sort(split, Collections.reverseOrder());
         StringBuilder sb = new StringBuilder();
+
         for (String s : split) {
             sb.append(s);
         }
