@@ -51,17 +51,18 @@ public class Boj_1377_버블소트 {
         for (int i = 0; i < n; i++) {
             points.add(new Point(i, Integer.parseInt(br.readLine())));
         }
-    //   System.out.println(points);
+        System.out.println(points);
         Collections.sort(points);
-   //     System.out.println(points);
+        System.out.println(points);
         int max = 0;
         List<Integer> movePoints = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-    //        System.out.println(points.get(i).getIndex());
+           // System.out.println(points.get(i).getIndex());
             movePoints.add(points.get(i).getIndex() - i);
             max = Math.max(points.get(i).getIndex() - i, max);
+            System.out.println(max);
         }
-   //     System.out.println(movePoints.toString());
+        System.out.println(movePoints.toString());
         System.out.println(max + 1);
     }
 }

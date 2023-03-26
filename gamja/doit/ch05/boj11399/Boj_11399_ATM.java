@@ -16,6 +16,7 @@ public class Boj_11399_ATM {
         for (int i = 1; i <= m; i++) {
             map.put(i, Integer.valueOf(st.nextToken()));
         }
+        //사람,시간
         List<Integer> keySet = new ArrayList<>(map.keySet());
         keySet.sort((o1, o2) -> map.get(o1).compareTo(map.get(o2)));
         //mergeSort(arr, 0, arr.length - 1);
@@ -49,6 +50,12 @@ public class Boj_11399_ATM {
         int k = left;
 
         while (i <= middle && j <= right) {
+            if (arr[i] <= arr[j]) {
+                tmp[k++] = arr[i++];
+            }
+            if (arr[i] <= arr[j]) {
+                tmp[k++] = arr[i++];
+            }
             if (arr[i] <= arr[j]) {
                 tmp[k++] = arr[i++];
             }

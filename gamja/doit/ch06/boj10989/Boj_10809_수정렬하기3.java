@@ -1,49 +1,43 @@
-package doit.ch06.boj11724;
+package doit.ch06.boj10989;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.ArrayList;
 
-public class Boj_11724_연요소의개수 {
-    static boolean[] visit;
-    static int[][] arr;
-
+public class Boj_10809_수정렬하기3 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int num = Integer.parseInt(br.readLine());
+        int[] count = new int[10001];
+        StringBuilder sb = new StringBuilder();
 
-        arr = new int[n][n];
-        visit = new boolean[n];
-
-        for (int i = 0; i < m; i++) {
-            st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken()) - 1;
-            int b = Integer.parseInt(st.nextToken()) - 1;
-            arr[a][b] = 1;
-            arr[b][a] = 1;
+        for (int i = 0; i < num; i++) {
+            count[Integer.parseInt(br.readLine())]++;
         }
 
-        int cnt = 0;
-        for (int i = 0; i < visit.length; i++) {
-            if (!visit[i]) {
-                cnt++;
-                dfs(i);
+        for (int i = 1; i < count.length; i++) {
+            while (count[i] > 0) {
+                sb.append(i+"\n");
+                count[i]--;
             }
         }
-        System.out.println(cnt);
-    }
+        System.out.println(sb);
 
-    static void dfs(int idx) {
-        if (visit[idx]) {
-            return;
-        } else {
-            visit[idx] = true;
-            for (int i = 0; i < visit.length; i++) {
-                dfs(i);
-            }
-        }
+//        long beforeTime = System.currentTimeMillis(); //코드 실행 전에 시간 받아오기
+////실험할 코드 추가
+//        ArrayList list = new ArrayList(10000000);
+//        for (int i = 0; i < 10000000; i++) {
+//            // int n = (int) (Math.random()*1000000);
+//            list.add(i);
+//        }
+//
+//        long afterTime = System.currentTimeMillis(); // 코드 실행 후에 시간 받아오기
+//        long secDiffTime = (afterTime - beforeTime) / 1000; //두 시간에 차 계산
+//        System.out.println("시간차이(m) : " + secDiffTime);
+//
+//        Runtime.getRuntime().gc();
+//        long usedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+//        System.out.print(usedMemory + " bytes");  //메모리 확인
     }
 }
