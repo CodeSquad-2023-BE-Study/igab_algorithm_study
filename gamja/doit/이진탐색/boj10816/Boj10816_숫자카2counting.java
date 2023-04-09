@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 public class Boj10816_숫자카2counting {
     static int[] arr;
     static int N;
-
+// hashMap (key .value) counting 정렬
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
